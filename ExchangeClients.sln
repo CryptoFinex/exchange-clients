@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoFinex.BitFinexClient", "src\CryptoFinex.BitFinexClient\CryptoFinex.BitFinexClient.csproj", "{252D3A6A-78E7-4B4F-9E8A-F7C13676749C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E8A00520-80B3-4D2E-95B3-03BCA222F17E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BF1A67BF-ACCE-4A43-AFEE-705AB6804F2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoFinex.BitFinexClient.Tests", "tests\CryptoFinex.BitFinexClient.Tests\CryptoFinex.BitFinexClient.Tests.csproj", "{E5C20E51-5CE2-49D9-883D-AF67A8138BFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{252D3A6A-78E7-4B4F-9E8A-F7C13676749C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{252D3A6A-78E7-4B4F-9E8A-F7C13676749C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{252D3A6A-78E7-4B4F-9E8A-F7C13676749C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{252D3A6A-78E7-4B4F-9E8A-F7C13676749C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5C20E51-5CE2-49D9-883D-AF67A8138BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5C20E51-5CE2-49D9-883D-AF67A8138BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5C20E51-5CE2-49D9-883D-AF67A8138BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5C20E51-5CE2-49D9-883D-AF67A8138BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{252D3A6A-78E7-4B4F-9E8A-F7C13676749C} = {BF1A67BF-ACCE-4A43-AFEE-705AB6804F2E}
+		{E5C20E51-5CE2-49D9-883D-AF67A8138BFD} = {E8A00520-80B3-4D2E-95B3-03BCA222F17E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34EB80BE-3B66-4ACE-BD7E-DE4975B39AAB}
+	EndGlobalSection
+EndGlobal
