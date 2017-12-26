@@ -8,9 +8,9 @@ namespace CryptoFinex.Common.Net.Internal
 
     public sealed class TaskQueue
     {
-        private readonly object _lockObj = new object();
-        private Task _lastQueuedTask;
-        private volatile bool _drained;
+        private readonly object lockObj = new object();
+        private Task lastQueuedTask;
+        private volatile bool drained;
 
         public TaskQueue()
             : this(Task.CompletedTask)
@@ -18,12 +18,12 @@ namespace CryptoFinex.Common.Net.Internal
 
         public TaskQueue(Task initialTask)
         {
-            _lastQueuedTask = initialTask;
+            lastQueuedTask = initialTask;
         }
 
         public bool IsDrained
         {
-            get { return _drained; }
+            get { return drained; }
         }
 
         public Task Enqueue(Func<Task> taskFunc)
@@ -33,14 +33,14 @@ namespace CryptoFinex.Common.Net.Internal
 
         public Task Enqueue(Func<object, Task> taskFunc, object state)
         {
-            lock (_lockObj)
+            lock (lockObj)
             {
-                if (_drained)
+                if (drained)
                 {
-                    return _lastQueuedTask;
+                    return lastQueuedTask;
                 }
 
-                var newTask = _lastQueuedTask.ContinueWith((t, s1) =>
+                var newTask = lastQueuedTask.ContinueWith((t, s1) =>
                 {
                     if (t.IsFaulted || t.IsCanceled)
                     {
@@ -50,18 +50,18 @@ namespace CryptoFinex.Common.Net.Internal
                     return taskFunc(s1) ?? Task.CompletedTask;
                 },
                 state).Unwrap();
-                _lastQueuedTask = newTask;
+                lastQueuedTask = newTask;
                 return newTask;
             }
         }
 
         public Task Drain()
         {
-            lock (_lockObj)
+            lock (lockObj)
             {
-                _drained = true;
+                drained = true;
 
-                return _lastQueuedTask;
+                return lastQueuedTask;
             }
         }
     }

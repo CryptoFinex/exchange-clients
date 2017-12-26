@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Channels;
 
-namespace CryptoFinex.Common.Net
+namespace CryptoFinex.Common.Net.Internal
 {
-    public static class ChannelConnection
+    internal static class ChannelConnection
     {
         public static ChannelConnection<TIn, TOut> Create<TIn, TOut>(Channel<TIn> input, Channel<TOut> output)
         {
@@ -16,7 +16,7 @@ namespace CryptoFinex.Common.Net
         }
     }
 
-    public class ChannelConnection<T> : Channel<T>, IDisposable
+    internal class ChannelConnection<T> : Channel<T>, IDisposable
     {
         public Channel<T> Input { get; }
         public Channel<T> Output { get; }
@@ -37,7 +37,7 @@ namespace CryptoFinex.Common.Net
         }
     }
 
-    public class ChannelConnection<TIn, TOut> : Channel<TOut, TIn>, IDisposable
+    internal class ChannelConnection<TIn, TOut> : Channel<TOut, TIn>, IDisposable
     {
         public Channel<TIn> Input { get; }
         public Channel<TOut> Output { get; }

@@ -7,11 +7,10 @@ using System.Threading.Channels;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
-using CryptoFinex.Common.Net.Internal;
 
-namespace CryptoFinex.Common.Net
+namespace CryptoFinex.Common.Net.Internal
 {
-    public class WebSocketsTransport
+    internal class WebSocketsTransport
     {
         private readonly ClientWebSocket webSocket;
         private Channel<byte[], SendMessage> channel;

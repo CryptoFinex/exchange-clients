@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace CryptoFinex.Common.Net
+namespace CryptoFinex.Common.Net.Internal
 {
-    public struct SendMessage
+    internal struct SendMessage
     {
         public byte[] Payload { get; }
         public TaskCompletionSource<object> SendResult { get; }
